@@ -1,113 +1,61 @@
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import Image from "next/image";
 
-export default function Home() {
+const Page = () => {
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="overflow-x-hidden">
+      <Header />
+      <div className="p-3 flex flex-col mt-20 md:px-7">
+        <section className="flex flex-col justify-start gap-1 mb-2 ml-36 xl:flex-row xl:items-center xl: my-8 xl:gap-2">
+          <div className="text-start mt-8 text-[28px] text-[#005E9E] font-semibold xl:mt-0">
+            Validação de CIE
+          </div>
+          <span className="text-xl text-[#005E9E] font-semibold md:text-2xl">(Carteira de Identificação Estudantil)</span>
+        </section>
+        <div className="border-b-4 border-[#005E9E] w-96 md:w-full"></div>
+        <section className="max-w-[1100px] w-full m-auto h-[85px] border border-[#cae0d0] bg-[#D4EDDA] mt-12 p-6 text-center text-2xl text-[#155724] font-medium rounded-md">Documento válido!</section>
+        <div className="max-w-[1100px] text-center m-auto my-4 text-md font-thin md:text-lg">UNE atesta que Haim Ferreira Araújo Braz é estudante e está regularmente matriculado(a) em Analise e Desenvolvimento de S da instituição Centro Universitario Mauricio de Nassau</div>
+        <div className="max-w-[1100px] w-full mt-2 md:flex md:gap-4 xl:m-auto xl:justify-start xl:items-start">
+          <div className="flex-1">
+            <div className="flex flex-col items-start justify-center border-y mb-2 h-15 md:flex-row md:gap-4 md:justify-start md:h-10 md:items-center md:text-lg">
+              <span className="font-semibold xl:ml-36">Nome:</span>
+              <div className="xl:ml-12 xl:font-thin"> Haim Ferreira Araújo Braz</div>
+            </div>
+            <div className="flex flex-col items-start justify-center border-b mb-2 h-15 md:flex-row md:gap-4 md:justify-start md:h-10 md:items-center md:text-lg">
+              <span className="font-semibold xl:ml-36">Instituição:</span>
+              <div className="text-sm lg:text-lg xl:ml-12 xl:font-thin"> Centro Universitario Mauricio de Nassau</div>
+            </div>
+            <div className="flex flex-col items-start justify-center border-b mb-2 h-15 md:flex-row md:gap-4 md:justify-start md:h-10 md:items-center md:text-lg">
+              <span className="font-semibold xl:ml-36">Curso:</span>
+              <div className=" xl:ml-12 xl:font-thin"> Analise e Desenvolvimento de S</div>
+            </div>
+            <div className="flex flex-col items-start justify-center border-b mb-2 h-15 md:flex-row md:gap-4 md:justify-start md:h-24 xl:h-16 md:text-lg">
+              <span className="font-semibold md:w-20 md:text-center xl:w-40 xl:ml-24">Documento de Identificação:</span>
+              <div className="md:ml-8 xl:ml-12 xl:font-thin"> 000000008118287</div>
+            </div>
+            <div className="flex flex-col items-start justify-center border-b mb-2 h-15 md:flex-row md:gap-4 md:justify-start md:h-10 md:items-center md:text-lg">
+              <span className="font-semibold xl:ml-36">Emissor:</span>
+              <div className="xl:ml-12 xl:font-thin"> UNE</div>
+            </div>
+          </div>
+          <div className="w-35 h-35 m-auto flex justify-center items-center max-w-[375]:w-40 md:w-52 lg:w-36 xl:w-[160px] xl:h-[213px]">
+            <Image className="w-35 h-35 rounded-md max-w-[375]:w-40 md:w-52 lg:w-36 xl:w-[160px] xl:h-[213px]" src="/assets/haim.jpeg" width={100} height={150} alt="Haim" />
+          </div>
         </div>
+        <section className="max-w-[1100px] m-auto mt-4">
+          <p className="text-xl font-medium mt-8">Certificado de Atributo em formato PEM:</p>
+          <div className=" border border-gray-200 p-4 mt-4">
+            <div className="text-gray-400 font-thin text-center mb-4">-----BEGIN CERTIFICATE-----</div>
+            <p className="text-gray-500 break-all text-sm">MIID9DCCAtwCAQEwgYOggYAwe6R5MHcxCzAJBgNVBAYTAkJSMRMwEQYDVQQKDApJQ1AtQnJhc2lsMSYwJAYDVQQLDB1VTklBTyBOQUNJT05BTCBET1MgRVNUVURBTlRFUzErMCkGA1UEAwwiRGllZ28gRnJlZGVyaWNvIE1vcmVpcmEgZG9zIFNhbnRvcwIBAaCBzjCBy6SByDCBxTELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxFzAVBgNVBAsMDjE0MTIxOTU3MDAwMTA5MRkwFwYDVQQLDBBWaWRlb2NvbmZlcmVuY2lhMQ4wDAYDVQQLDAVWQUxJRDEbMBkGA1UECwwSUGVzc29hIEp1cmlkaWNhIEEzMRgwFgYDVQQLDA9BQyBWQUxJRCBCUkFTSUwxJjAkBgNVBAMMHVVOSUFPIE5BQ0lPTkFMIERPUyBFU1RVREFOVEVTMA0GCSqGSIb3DQEBBQUAAgQAvWYCMCIYDzIwMjQwMTIyMTYyNDA0WhgPMjAyNTAzMzEyMzU5NTlaMIHNMEYGBWBMAQoBMT0TOzAxMDIxOTkzMDg4ODM5MTU0NDUwMDAwMDAwMDEwNTgyNjgwMDAwMDAwMDcxNTEyOTQgICAgICAgICAgMHYGBWBMAQoCMW0Ta0NlbnRybyBVbml2ZXJzaXRhcmlvIE1hdXJpY2lvIGRlIE5hc3NhdSBTVVBFUklPUiAgICAgICBBbmFsaXNlIGUgRGVzZW52b2x2aW1lbnRvIGRlIFNSZWNpZmUgICAgICAgICAgICAgIFBFMAsGBWBMAQQDMQITADB3MDMGA1UdHwQsMCqhKIYmaHR0cHM6Ly91bmUuZG5lLnZjL3YxL2NybC91bmUuY3JsP2lkPTMwHQYDVR0jBBaAFMjcELS9S/92KxXVR8Ng1zkde73OMCEGCCsGAQUFBwEBBBUwEwYIKwYBBQUHMAIEB4YFSFRUUFMwDQYJKoZIhvcNAQEFBQADggEBADys2Sx8I69aBYxFyGUQaZuXun507sZ3A8AAvyaXxAka9y0PlUhD22Dmw9csgbOeFmSlwR8T0+p+o7afQWm98dkkrOFfIRXawOTlanAmtbkK3hT8Y+Cfzqy1p28JDrB+QIOTI7HlcZmjyTUtnwuCwWOwL48qjRSmMzApgPl43wIozXYV1vcVl+GdA+gqHmAIyuivAJgCeKmyqFJdS734HhzTqnJTg9NLIriwQZFQMNjHNuC5Vc7eos6mndPYIXMxqGtgWT1fC9iX2PnPt2Ni365o86+sguuODCChwCQSZB9hsgyYczgmkyq+VV6s3/CofpAj+M7Pt9nw+mJPgCv+KcU=</p>
+            <div className="text-gray-400 font-thin text-center my-4">-----END CERTIFICATE-----</div>
+          </div>
+        </section>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+      <Footer />
+    </div>
+  )
 }
+
+export default Page;
